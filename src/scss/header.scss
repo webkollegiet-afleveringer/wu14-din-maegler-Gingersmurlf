@@ -1,0 +1,55 @@
+@use "./variables.scss" as *;
+
+.header {
+  &__adress {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 3rem;
+    background: $primary-color1;
+    color: white;
+    font-style: normal;
+    &__list {
+      max-width: 75rem;
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      li {
+        font-size: 18px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 0.5rem;
+      }
+    }
+  }
+  &__nav {
+    max-width: 75rem;
+    margin: 0 auto;
+    height: 5.625rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &__list {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 2.5rem;
+    }
+  }
+  &__heroSection {
+    height: 53.125rem;
+    background-color: rgba($color: #000000, $alpha: 0.5);
+    img {
+      mix-blend-mode: soft-light;
+      width: 100%;
+      position: absolute;
+    }
+  }
+}
+
+.header__adress__list {
+  & li:nth-child(2) {
+    margin-right: 40rem;
+  }
+}
