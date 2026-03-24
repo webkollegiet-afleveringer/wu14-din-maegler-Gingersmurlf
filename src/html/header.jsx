@@ -2,6 +2,7 @@ import Phone from "../assets/svg/phone.svg";
 import Plane from "../assets/svg/plane.svg";
 import User from "../assets/svg/user.svg";
 import Logo from "../assets/svg/logo.svg";
+
 import { Link } from "react-router";
 
 export default function Header() {
@@ -45,15 +46,31 @@ export default function Header() {
           src="../../public/hero-house.png"
           alt="background image, of a house"
         />
-        <h3>Søg efter din drømmebolig</h3>
-        <div className="header__heroSection__white">
-          <form>
-            <input
-              type="text"
-              placeholder="Søg på fx. glaskeramisk komfur, bryggers, kælder eller lignendes"
-            />
-            <button type="submit">Søg</button>
-          </form>
+        <div className="header__heroSection__box">
+          <div className="header__heroSection__box__heading">
+            <h2>Søg efter din drømmebolig</h2>
+          </div>
+          <div className="header__heroSection__box__white">
+            <p className="header__heroSection__box__white__heading">
+              Søg blandt 158 boliger til salg i 74 butikker
+            </p>
+            <form className="header__heroSection__box__white__form">
+              <legend className="header__heroSection__box__white__form__legend">
+                Hvad skal din næste bolig indeholde
+              </legend>
+              <input
+                className="header__heroSection__box__white__form__input"
+                type="text"
+                placeholder="Søg på fx. glaskeramisk komfur, bryggers, kælder eller lignende"
+              />
+              <button
+                className="header__heroSection__box__white__form__btn"
+                type="submit"
+              >
+                Søg
+              </button>
+            </form>
+          </div>
         </div>
       </section>
     </header>
