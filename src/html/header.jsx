@@ -43,7 +43,7 @@ export default function Header() {
       </nav>
       <section className="header__heroSection">
         <img
-          src="../../public/hero-house.png"
+          src="/hero-house.png"
           alt="background image, of a house"
         />
         <div className="header__heroSection__box">
@@ -51,7 +51,9 @@ export default function Header() {
             <h2>Søg efter din drømmebolig</h2>
           </div>
           <div className="header__heroSection__box__white">
-            <p className="header__heroSection__box__white__heading">
+            <p 
+            id="hej"
+            className="header__heroSection__box__white__header">
               Søg blandt 158 boliger til salg i 74 butikker
             </p>
             <form className="header__heroSection__box__white__form">

@@ -1,0 +1,59 @@
+@use "variables.scss" as *;
+
+.main {
+  max-width: 75rem;
+  margin: 0 auto;
+  padding-top: 7.5rem;
+  &__firstSection {
+    background: white;
+    img {
+      max-width: 31.375rem;
+      max-height: 29.8125rem;
+    }
+    &__container {
+      display: flex;
+      justify-content: space-between;
+      max-width: 68.75rem;
+      &__box {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        max-width: 31.25rem;
+        h3 {
+            color: $heading1;
+            font-size: 38px;
+        }
+        h4 {
+            color: $primary-color1;
+            font-size: 24px;
+        }
+        p {
+            color: $paragraph1;
+            font-size: 18px;
+        }
+        &__images {
+            display: flex;
+            gap: 16px;
+            div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                p {
+                    font-size: 18px;
+                    color: $paragraph1;
+                }
+                h5 {
+                    font-size: 24px;
+                    color: $heading2;
+                }
+            }
+          .blue {
+            background-color: #eef7ff;
+            padding: 0.875rem;
+            max-width: 4.375rem;
+          }
+        }
+      }
+    }
+  }
+}

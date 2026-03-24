@@ -41,13 +41,14 @@
     height: 53.125rem;
     background-color: rgba($color: #000000, $alpha: 0.5);
     display: grid;
-    grid-template-areas: 
-      "blank fill fill blank";
+    grid-template-areas: "blank fill fill blank";
     img {
       mix-blend-mode: soft-light;
-      width: 100%;
+      height: 53.125rem;
+      max-width: 100%;
       position: absolute;
       z-index: 1;
+      object-fit: cover;
     }
     &__box {
       z-index: 10;
@@ -72,17 +73,11 @@
         gap: 1rem;
         justify-content: space-around;
         padding: 1.5rem;
-        &__heading {
+        &__header {
           font-size: 20px;
           color: $heading2;
-          font-weight: $font-bold;
-        }::after {
-          content: "";
-          position: absolute;
-          left: 0;
-          width: 10px;
-          background: black;
         }
+        font-weight: $font-bold;
         &__form {
           &__legend {
             font-weight: $font-reg;
@@ -91,7 +86,7 @@
           &__input {
             width: 80%;
             height: 3rem;
-            border: solid 1px #D3DEE8;
+            border: solid 1px #d3dee8;
             color: $paragraph2;
             padding: 0.5rem;
           }
@@ -109,6 +104,20 @@
       }
     }
   }
+}
+
+#hej {
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+#hej::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  width: 2.6875rem;
+  bottom: 0;
+  left: 0;
+  background: black;
 }
 
 .header__adress__list {
