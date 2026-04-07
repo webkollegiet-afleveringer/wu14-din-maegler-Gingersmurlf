@@ -1,11 +1,16 @@
+import { Outlet } from "react-router";
 import Header from "./html/header.jsx";
-import Main from "./html/Main.jsx";
+import Footer from "./html/Footer.jsx";
+import { AuthProvider } from "./context/AuthContext.jsx";
 
 export default function App() {
   return (
-    <div className="wrapper">
-      <Header />
-      <Main />
-    </div>
+    <AuthProvider>
+      <div className="wrapper">
+        <Header />
+        <Outlet />
+        <Footer />
+      </div>
+    </AuthProvider>
   )
 }

@@ -1,0 +1,672 @@
+@use "variables.scss" as *;
+
+.homesPage,
+.homeDetailsPage,
+.agentsPage,
+.agentDetailsPage,
+.contactPage,
+.authPage,
+.favoritesPage,
+.notfound {
+  max-width: 72.5rem;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem;
+}
+
+.pageBanner {
+  height: 8.75rem;
+  background: linear-gradient(rgba(13, 39, 65, 0.88), rgba(13, 39, 65, 0.88)), url("/hero-house.png");
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+  h1 {
+    color: white;
+    font-size: 36px;
+    margin-bottom: 0.25rem;
+  }
+  p {
+    color: #dbe3ec;
+  }
+}
+
+.homesPage {
+  &__filters {
+    border: 1px solid $shape1;
+    background: white;
+    padding: 1rem 1.25rem;
+    margin-bottom: 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    label {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    select,
+    input {
+      width: 100%;
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: 1rem;
+    &__card {
+      border: 1px solid $shape1;
+      background: white;
+      display: grid;
+      grid-template-columns: 20rem 1fr;
+      &__imageWrap {
+        position: relative;
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        &__favorite {
+          position: absolute;
+          top: 0.75rem;
+          right: 0.75rem;
+          width: 2.5rem;
+          height: 2.5rem;
+          border: none;
+          background: rgba($color: #ffffff, $alpha: 0.9);
+          font-size: 22px;
+          color: #b91f1f;
+          cursor: pointer;
+        }
+      }
+      &__body {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.35rem;
+        h2 {
+          font-size: 20px;
+          color: $heading2;
+        }
+        p {
+          color: $paragraph1;
+          font-size: 0.875rem;
+        }
+        h3 {
+          color: $primary-color1;
+          font-size: 20px;
+        }
+        a {
+          width: fit-content;
+          background: $primary-color1;
+          color: white;
+          padding: 0.4rem 0.85rem;
+          font-size: 0.75rem;
+        }
+      }
+    }
+  }
+}
+
+.homeDetailsPage {
+  &__hero {
+    margin-bottom: 1rem;
+    img {
+      width: 100%;
+      height: 30rem;
+      object-fit: cover;
+    }
+  }
+
+  &__intro {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid $shape1;
+    margin-bottom: 1rem;
+  }
+
+  &__actions {
+    display: flex;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    button {
+      border: 1px solid $shape1;
+      background: white;
+      height: 2.75rem;
+      padding: 0 1rem;
+      cursor: pointer;
+    }
+  }
+
+  &__facts {
+    border-top: 1px solid $shape1;
+    border-bottom: 1px solid $shape1;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1.25rem;
+    padding: 1.25rem 0;
+    margin-bottom: 1.5rem;
+  }
+
+  &__description {
+    margin-bottom: 2rem;
+    p {
+      margin-top: 0.75rem;
+      line-height: 1.6;
+    }
+  }
+
+  &__agent {
+    border: 1px solid $shape1;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 12rem 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba($color: #000000, $alpha: 0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 30;
+    &__content {
+      width: min(95vw, 62rem);
+      max-height: 90vh;
+      overflow: auto;
+      background: white;
+      padding: 1rem;
+      button {
+        margin-bottom: 1rem;
+      }
+      > img {
+        width: 100%;
+      }
+      &__grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+        img {
+          width: 100%;
+          height: 14rem;
+          object-fit: cover;
+        }
+      }
+    }
+  }
+}
+
+.agentsPage {
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    &__card {
+      border: 1px solid $shape1;
+      img {
+        width: 100%;
+        height: 14rem;
+        object-fit: cover;
+      }
+      div {
+        padding: 0.75rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.25rem;
+        h2 {
+          font-size: 1rem;
+        }
+        p {
+          font-size: 0.75rem;
+          color: $paragraph1;
+        }
+        a {
+          margin-top: 0.25rem;
+          font-size: 0.75rem;
+          font-weight: $font-bold;
+          color: $primary-color1;
+        }
+      }
+    }
+  }
+}
+
+.agentDetailsPage {
+  &__intro {
+    display: grid;
+    grid-template-columns: 15rem 1fr 14rem;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+
+    &__profile,
+    &__about,
+    &__contactCard {
+      border: 1px solid $shape1;
+      background: white;
+      padding: 1rem;
+      font-size: 0.8125rem;
+    }
+
+    &__profile {
+      img {
+        width: 100%;
+        height: 10rem;
+        object-fit: cover;
+        margin-bottom: 0.5rem;
+      }
+      h2 {
+        font-size: 1.05rem;
+        margin-bottom: 0.25rem;
+      }
+    }
+
+    &__about {
+      h3 {
+        margin-bottom: 0.5rem;
+      }
+      p {
+        line-height: 1.65;
+      }
+    }
+
+    &__contactCard {
+      background: #10263f;
+      color: white;
+      h3 {
+        margin-bottom: 0.6rem;
+      }
+      p {
+        color: #d9e3ed;
+        margin-bottom: 0.4rem;
+      }
+    }
+  }
+
+  &__formSection {
+    margin-bottom: 2rem;
+    form {
+      display: grid;
+      gap: 0.5rem;
+      max-width: 36rem;
+      input,
+      textarea {
+        border: 1px solid $shape1;
+        padding: 0.625rem;
+      }
+      button {
+        width: fit-content;
+        background: $primary-color1;
+        color: white;
+        border: none;
+        padding: 0.625rem 1rem;
+        margin-top: 0.5rem;
+      }
+    }
+    &__error {
+      color: #a81616;
+    }
+    &__success {
+      color: #1f7435;
+    }
+  }
+
+  &__searchSection {
+    border: 1px solid $shape1;
+    padding: 1rem;
+    max-width: 16rem;
+    input {
+      margin: 0.75rem 0;
+      width: 100%;
+      border: 1px solid $shape1;
+      height: 2.75rem;
+      padding: 0 0.75rem;
+    }
+  }
+}
+
+.contactPage {
+  &__content {
+    display: grid;
+    grid-template-columns: 1fr 18rem;
+    gap: 2rem;
+    align-items: start;
+
+    &__form {
+      border: 1px solid $shape1;
+      padding: 1.5rem;
+      background: white;
+      display: grid;
+      gap: 0.5rem;
+      align-content: start;
+      p {
+        color: $paragraph1;
+        line-height: 1.6;
+        margin-bottom: 0.35rem;
+      }
+      input,
+      textarea {
+        border: 1px solid $shape1;
+        padding: 0.625rem;
+      }
+      button {
+        margin-top: 0.5rem;
+        width: fit-content;
+        padding: 0.625rem 1rem;
+        border: none;
+        background: $primary-color1;
+        color: white;
+      }
+      &__error {
+        color: #a81616;
+      }
+      &__success {
+        color: #1f7435;
+      }
+    }
+
+    &__contactBox {
+      border: 1px solid $shape1;
+      background: white;
+      padding: 1.5rem;
+      h3 {
+        margin-bottom: 0.75rem;
+      }
+      p {
+        font-size: 0.8125rem;
+        margin-bottom: 0.4rem;
+      }
+      p:nth-child(odd) {
+        color: $primary-color1;
+        font-weight: $font-bold;
+      }
+    }
+  }
+
+  &__mapSection {
+    margin-top: 1rem;
+    border: 1px solid $shape1;
+    background: white;
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+}
+
+.authPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__box {
+    width: 100%;
+    max-width: 22rem;
+    padding: 1.5rem;
+    border: 1px solid $shape1;
+    background: white;
+    margin-top: 1rem;
+    h2 {
+      margin-bottom: 1rem;
+      color: $heading1;
+      font-size: 1rem;
+      text-align: center;
+    }
+    form {
+      display: grid;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      input {
+        border: 1px solid $shape1;
+        height: 2.75rem;
+        padding: 0 0.75rem;
+      }
+      button {
+        margin-top: 0.5rem;
+        width: 100%;
+        padding: 0.625rem 1rem;
+        border: none;
+        background: $primary-color1;
+        color: white;
+      }
+    }
+    &__social {
+      margin: 1rem 0;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.5rem;
+      button {
+        border: none;
+        color: white;
+        height: 2.5rem;
+        font-size: 0.6875rem;
+      }
+      .google {
+        background: #d24833;
+      }
+      .facebook {
+        background: #3a5998;
+      }
+      .twitter {
+        background: #1da1f2;
+      }
+    }
+    &__error {
+      color: #a81616;
+    }
+    &__success {
+      color: #1f7435;
+    }
+  }
+}
+
+.favoritesPage {
+  h1 {
+    margin: 0 auto 1rem;
+    max-width: 36rem;
+  }
+  &__list {
+    max-width: 36rem;
+    margin: 0 auto;
+    display: grid;
+    gap: 0.75rem;
+    &__card {
+      border: 1px solid $shape1;
+      display: grid;
+      grid-template-columns: 8.5rem 1fr;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      div {
+        padding: 0.6rem;
+        h2 {
+          font-size: 1rem;
+        }
+        p {
+          font-size: 0.75rem;
+        }
+        h3 {
+          font-size: 0.9rem;
+        }
+      }
+      &__actions {
+        margin-top: 0.4rem;
+        display: flex;
+        gap: 0.5rem;
+        a,
+        button {
+          padding: 0.35rem 0.6rem;
+          border: none;
+          background: $primary-color1;
+          color: white;
+          cursor: pointer;
+          font-size: 0.6875rem;
+        }
+      }
+    }
+  }
+}
+
+.notfound {
+  min-height: 26rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #e7eff8;
+  margin-top: 1rem;
+  h1 {
+    font-size: 54px;
+    margin-bottom: 1rem;
+    color: white;
+    text-shadow: 0 2px 5px rgba(16, 38, 63, 0.5);
+  }
+  p {
+    margin-bottom: 0.75rem;
+  }
+  button {
+    border: none;
+    background: $primary-color1;
+    color: white;
+    padding: 0.625rem 1rem;
+  }
+}
+
+@media (max-width: 900px) {
+  .main {
+    padding: 4rem 1rem;
+
+    &__firstSection__features {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    &__homesSection__grid,
+    &__agentsSection__grid {
+      grid-template-columns: 1fr;
+    }
+
+    &__newsletterSection__box {
+      grid-template-columns: 1fr;
+      form {
+        flex-direction: column;
+        input {
+          width: 100%;
+        }
+      }
+    }
+
+    &__serviceSection__box {
+      grid-template-columns: 1fr;
+      img {
+        max-width: 10rem;
+      }
+    }
+  }
+
+  .homesPage {
+    &__filters {
+      grid-template-columns: 1fr;
+    }
+    &__list__card {
+      grid-template-columns: 1fr;
+      &__imageWrap {
+        height: 16rem;
+      }
+    }
+  }
+
+  .agentsPage__grid,
+  .contactPage__content,
+  .agentDetailsPage__intro {
+    grid-template-columns: 1fr;
+  }
+
+  .contactPage__content__form,
+  .contactPage__content__contactBox {
+    order: 1;
+  }
+
+  .pageBanner h1 {
+    font-size: 30px;
+  }
+
+  .favoritesPage__list__card {
+    grid-template-columns: 1fr;
+    img {
+      height: 12rem;
+    }
+  }
+
+  .header {
+    &__adress__list li {
+      font-size: 14px;
+    }
+    &__adress__list {
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    &__nav {
+      height: auto;
+      padding: 1rem;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 0.75rem;
+      &__list {
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+    }
+    &__heroSection {
+      height: auto;
+      min-height: 34rem;
+      padding: 2rem 1rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        height: 100%;
+      }
+      &__box {
+        width: 100%;
+        &__heading h2 {
+          font-size: 34px;
+          text-align: center;
+        }
+        &__white {
+          width: 100%;
+          height: auto;
+          &__form {
+            display: grid;
+            gap: 0.5rem;
+            &__input {
+              width: 100%;
+            }
+            &__btn {
+              margin: 0;
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .header__adress__list {
+    & li:nth-child(2) {
+      margin-right: 0;
+    }
+  }
+}
